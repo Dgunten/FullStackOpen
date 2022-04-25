@@ -1,1 +1,18 @@
+browser -> server HTTPs POST	https://studies.cs.helsinki.fi/exampleapp/new_note 
+Server -> browser html code
+browser -> Server 	https://studies.cs.helsinki.fi/exampleapp/notes 
+browser -> server HTTPs GET	https://studies.cs.helsinki.fi/exampleapp/main.css
+server -> browser main.css
+browser -> server HTTPs GET	https://studies.cs.helsinki.fi/exampleapp/main.js
+server -> browser main.js
+browser -> server HTTPs GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server -> browser data.json
+browser -> server HTTPs GET	https://studies.cs.helsinki.fi/favicon.ico
+server -> browser favicon.ico
+
+Notes on above:
+browser requests server to new_note
+server responds with 302 and new location to refresh to ending in exampleapp/notes
+browser goes to exampleapp/notes and also asks for main.css(style sheet), main.js(javascript code), main.json(raw data of notes), and favicon.ico(icons)
+end note
 

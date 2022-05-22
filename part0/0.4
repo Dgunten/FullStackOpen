@@ -6,13 +6,15 @@ server -> browser main.css
 browser -> server HTTPs GET	https://studies.cs.helsinki.fi/exampleapp/main.js
 server -> browser main.js
 browser -> server HTTPs GET https://studies.cs.helsinki.fi/exampleapp/data.json
-server -> browser data.json
+server -> browser data.json (content)
 browser -> server HTTPs GET	https://studies.cs.helsinki.fi/favicon.ico
 server -> browser favicon.ico
 
 Notes on above:
 browser requests server to new_note
 server responds with 302 and new location to refresh to ending in exampleapp/notes
-browser goes to exampleapp/notes and also asks for main.css(style sheet), main.js(javascript code), main.json(raw data of notes), and favicon.ico(icons)
+browser goes to exampleapp/notes and also asks for main.css(style sheet), main.js(javascript code), main.json(raw data of notes)
+server executes event handler DOM and sends back content which renders note to display
+browser also asks for favicon and server sends them back
 end note
 

@@ -1,1 +1,17 @@
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/spa
+server -> browser: HTML code
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/main.css
+server -> browser: main.css
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/spa.js
+server -> browser: java script
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/data.json
+server -> browser: data.json
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/favicon.io
+server -> browser: favicon
+browser -> server: HTTP post https://studies.cs.helsinki.fi/exampleapp/new_note_spa
 
+
+Notes on above:
+Same page loading from part 0.5
+AFter typing in a new note and hitting submit the java script that was originally sent to the browser is run and the event handler creates a new note, adds it to the list, renders it on the page, and the browser sends the new content in a json format  via POST containing the message and the timestamp to the server
+Server responds with a 201 Created status 

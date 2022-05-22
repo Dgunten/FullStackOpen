@@ -1,0 +1,17 @@
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/spa
+server -> browser: HTML code
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/main.css
+server -> browser: main.css
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/spa.js
+server -> browser: java script
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/data.json
+server -> browser: data.json
+browser -> server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/favicon.io
+server -> browser: favicon
+
+notes on above:
+browser requests html code from /spa page, server responds with html
+Browser requests css for page, server responds with main.css
+Browser requests java script, server sends it back, browser runs java script and requests data.json
+server sends data.json and browser displays all contents
+browser requests favicon.io, server sends it back
